@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Registration</h1>
+	<div>
+		<form action="/new" method="POST">
+			{% csrf_token %}
+			<label>
+				First name:<input type="text" name="first_name">
+			</label>
+			<label>
+				Last name:<input type="text" name="last_name">
+			</label>
+			<label>
+				Email:<input type="text" name="email">
+			</label>
+			<label>
+				Password:<input type="password" name="password">
+			</label>
+			<label>
+				Confirm Password:<input type="password" name="confirm_password">
+			</label>
+			<label>
+				Date Hired:<input type="date" name="date_hired">
+			</label>
+			<input type="submit" name="register">
+		</form>
+	</div>
+	<div>
+		<h1>Login</h1>
+		<form action="/login" method="POST">
+			{% csrf_token %}
+			<label>
+				Email:<input type="text" name="email">
+			</label>
+			<label>
+				Password:<input type="password" name="password">
+			</label>
+			<input type="submit" name="login">
+		</form>
+	</div>
+</body>
+</html>

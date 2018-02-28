@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>welcome, {{session.first_name}}</h1>
+	<p>{{total}} people poked you</p>
+	
+	<table>
+		{% for info in all_users%}
+		<tr>
+			<td>{{info.first_name}}</td>
+			<td>{{info.last_name}}</td>
+			
+			<td>{{info.pokers.count}}</td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+	<!-- I can't figure out how to get how many times the logged user has been poked by the other users -->
+	<table>
+		{% for element in all_users%}
+		<tr>
+		<td>{{element.first_name}}</td>
+		<td>{{element.last_name}}</td>
+		<td>{{element.email}}</td>
+		
+		<td>{{element.pokes.count}} pokes</td>
+		
+		<td><a href="poke/{{element.id}}">poke</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+
+
+	<a href="/logout">logout</a>
+
+</body>
+</html>
